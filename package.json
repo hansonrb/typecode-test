@@ -1,0 +1,31 @@
+{
+  "name": "development-exercise-master",
+  "version": "1.0.0",
+  "description":
+    "For this excercise you are tasked with recreating this article page with one interactive element, an editable title.",
+  "main": "index.js",
+  "scripts": {
+    "build-css":
+      "node-sass-chokidar --include-path ./exercise/styles exercise/styles -o exercise",
+    "watch-css":
+      "npm run build-css && node-sass-chokidar --include-path ./exercise/styles exercise/styles -o exercise --watch --recursive",
+    "http-serve": "serve -s exercise -p 3000",
+    "start": "npm-run-all -p watch-css http-serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hansonrb/typecode-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hansonrb/typecode-test/issues"
+  },
+  "homepage": "https://github.com/hansonrb/typecode-test#readme",
+  "devDependencies": {
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "^4.1.2",
+    "serve": "^6.4.9"
+  }
+}
