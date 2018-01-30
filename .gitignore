@@ -1,4 +1,4 @@
 .DS_Store
-/node_modules
+/exercise/node_modules
 npm-debug.log*
-/exercise/main.css
+/exercise/public/main.css
