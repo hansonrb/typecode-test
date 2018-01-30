@@ -1,12 +1,12 @@
 $(document).ready(function() {
-  redrawTransparentTitle();
+  var title = $('#title-main').text();
+  redrawTransparentTitle(title);
   $(window).on('throttledresize', function(event) {
-    redrawTransparentTitle();
+    redrawTransparentTitle(title);
   });
 
-  function redrawTransparentTitle() {
-    var title = 'Are we out of the woods yet?';
-    var words = title.split(' ');
+  function redrawTransparentTitle(sentence) {
+    var words = sentence.split(' ');
 
     var hiddenTitle = $('#title-main');
     hiddenTitle.text('a'); // reset text
