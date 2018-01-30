@@ -177,34 +177,6 @@ header {
     color: white;
     font-size: 16px;
     text-transform: uppercase; }
-    header nav .hamburger-menu {
-      margin-left: 10px;
-      width: 33px;
-      height: 20px;
-      display: inline-block;
-      vertical-align: middle; }
-      header nav .hamburger-menu input {
-        display: block;
-        width: 40px;
-        height: 32px;
-        position: absolute;
-        top: -7px;
-        left: -5px;
-        cursor: pointer;
-        opacity: 0;
-        z-index: 2; }
-      header nav .hamburger-menu span {
-        display: block;
-        width: 100%;
-        height: 2px;
-        margin-bottom: 5px;
-        position: relative;
-        background: #9f9b86;
-        border-radius: 3px;
-        z-index: 1;
-        transform-origin: 4px 0px; }
-        header nav .hamburger-menu span:last-child {
-          transform-origin: 0% 100%; }
   header h1 {
     opacity: 0; }
   header .title-wrapper {
@@ -213,6 +185,75 @@ header {
     left: -30px;
     right: 0;
     padding: 0 30px; }
+    header .title-wrapper .editable-title {
+      position: relative; }
+      header .title-wrapper .editable-title.mode-read .svg-wrapper {
+        display: block; }
+      header .title-wrapper .editable-title.mode-read .editor-wrapper {
+        display: none; }
+      header .title-wrapper .editable-title.mode-read a.btn-edit {
+        display: none; }
+      header .title-wrapper .editable-title.mode-read a.btn-close {
+        display: none; }
+      header .title-wrapper .editable-title.mode-read a.btn-save {
+        display: none; }
+      header .title-wrapper .editable-title.mode-read:hover a.btn-edit {
+        display: block; }
+      header .title-wrapper .editable-title.mode-edit .svg-wrapper {
+        display: none; }
+      header .title-wrapper .editable-title.mode-edit .editor-wrapper {
+        display: block;
+        background-color: white;
+        padding: 22px;
+        margin-left: -22px;
+        width: 100%;
+        z-index: 10;
+        position: relative; }
+        header .title-wrapper .editable-title.mode-edit .editor-wrapper input {
+          height: 74px;
+          padding: 10px 16px;
+          font-size: 42px;
+          font-family: 'Copernicus';
+          margin-bottom: 5px;
+          display: block;
+          width: 100%;
+          box-sizing: border-box; }
+        header .title-wrapper .editable-title.mode-edit .editor-wrapper span {
+          font-size: 14px;
+          color: #b2b2b2; }
+          header .title-wrapper .editable-title.mode-edit .editor-wrapper span #slug {
+            color: #666666; }
+      header .title-wrapper .editable-title.mode-edit a.btn-edit {
+        display: none; }
+      header .title-wrapper .editable-title.mode-edit a.btn-close {
+        display: block; }
+      header .title-wrapper .editable-title.mode-edit a.btn-save {
+        display: block; }
+      header .title-wrapper .editable-title .action-btns {
+        position: absolute;
+        right: 100%;
+        bottom: 100%;
+        margin-right: 22px; }
+      header .title-wrapper .editable-title a.btn {
+        width: 30px;
+        height: 30px;
+        display: block; }
+        header .title-wrapper .editable-title a.btn.btn-edit {
+          border: 5px solid transparent;
+          margin-bottom: -5px;
+          margin-right: -5px; }
+          header .title-wrapper .editable-title a.btn.btn-edit img {
+            background-color: #f3e13b; }
+        header .title-wrapper .editable-title a.btn.btn-close {
+          background-color: #e56d3e; }
+        header .title-wrapper .editable-title a.btn.btn-save {
+          background-color: #a2d05a; }
+          header .title-wrapper .editable-title a.btn.btn-save.disabled {
+            background-color: #4d4d4d; }
+        header .title-wrapper .editable-title a.btn img {
+          width: 30px;
+          height: 30px;
+          display: block; }
     header .title-wrapper h1 {
       line-height: 72px;
       font-size: 70px;

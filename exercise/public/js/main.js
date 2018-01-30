@@ -1,10 +1,71 @@
 $(document).ready(function() {
-  var title = $('#title-main').text();
-  redrawTransparentTitle(title);
+  // initialize
+  window.title = $('#title-main').text();
+
+  redrawTransparentTitle(window.title);
+  $('.title-input').trigger('change');
+  var slugInterval = null;
+
+  // event handers
   $(window).on('throttledresize', function(event) {
-    redrawTransparentTitle(title);
+    redrawTransparentTitle(window.title);
   });
 
+  $('.action-btns .btn-close').click(function(e) {
+    $('.editable-title')
+      .removeClass('mode-edit')
+      .addClass('mode-read');
+  });
+
+  $('.action-btns .btn-edit').click(function(e) {
+    $('.title-input').val(window.title);
+    $('.editable-title')
+      .removeClass('mode-read')
+      .addClass('mode-edit');
+    $('.title-input').trigger('change');
+  });
+
+  $('.action-btns .btn-save').click(function(e) {
+    window.title = $('.title-input')
+      .val()
+      .trim();
+
+    $.post('/title', { title: window.title, slug: window.slug }, res => {
+      redrawTransparentTitle(window.title);
+
+      $('.editable-title')
+        .removeClass('mode-edit')
+        .addClass('mode-read');
+    });
+  });
+
+  $('.title-input').keydown(function(e) {
+    setTimeout(() => {
+      let val = $('.title-input').val();
+      if (val.trim() === '') {
+        $('a.btn-save').addClass('disabled');
+      } else {
+        $('a.btn-save').removeClass('disabled');
+      }
+    }, 50);
+
+    if (slugInterval) {
+      clearTimeout(slugInterval);
+    }
+    slugInterval = setTimeout(() => {
+      let val = $('.title-input').val();
+      $.get('/slug?title=' + val.trim(), res => {
+        if (res.error === 0) {
+          window.slug = res.slug;
+          $('#slug').text(res.slug);
+        } else {
+          alert('error, try again later: ' + res.msg);
+        }
+      });
+    }, 200);
+  });
+
+  // redraw title
   function redrawTransparentTitle(sentence) {
     var words = sentence.split(' ');
 

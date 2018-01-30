@@ -1,16 +1,13 @@
 {
   "name": "development-exercise-master",
   "version": "1.0.0",
-  "description":
-    "For this excercise you are tasked with recreating this article page with one interactive element, an editable title.",
+  "description": "For this excercise you are tasked with recreating this article page with one interactive element, an editable title.",
   "main": "index.js",
   "scripts": {
-    "build-css":
-      "node-sass-chokidar --include-path ./exercise/public/styles exercise/public/styles -o exercise/public",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar --include-path ./exercise/public/styles exercise/public/styles -o exercise/public --watch --recursive",
-    "http-serve": "http-server exercise -p 3000 -c10 -g",
-    "server": "node exercise/index.js",
+    "build-css": "node-sass-chokidar --include-path ./public/styles public/styles -o public",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./public/styles public/styles -o public --watch --recursive",
+    "http-serve": "http-server ./ -p 3000 -c10 -g",
+    "server": "node index.js",
     "start": "npm-run-all -p watch-css server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,6 +24,7 @@
   "devDependencies": {
     "http-server": "^0.11.1",
     "node-sass-chokidar": "0.0.3",
+    "nodemon": "^1.14.11",
     "npm-run-all": "^4.1.2"
   },
   "dependencies": {
@@ -38,6 +36,7 @@
     "morgan": "^1.9.0",
     "sequelize": "^4.32.2",
     "sequelize-cli": "^3.2.0",
+    "speakingurl": "^14.0.1",
     "sqlite3": "^3.1.13"
   }
 }
