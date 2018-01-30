@@ -6,9 +6,10 @@
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./public/styles public/styles -o public",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./public/styles public/styles -o public --watch --recursive",
-    "http-serve": "http-server ./ -p 3000 -c10 -g",
+    "static-serve": "http-server ./ -p 3000 -c10 -g",
     "server": "node index.js",
-    "start": "npm-run-all -p watch-css server",
+    "develop": "npm-run-all -p watch-css server",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

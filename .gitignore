@@ -2,3 +2,4 @@
 /exercise/node_modules
 npm-debug.log*
 /exercise/public/main.css
+/exercise/test.sqlite

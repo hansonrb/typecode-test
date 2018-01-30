@@ -20,30 +20,59 @@ It's not necessary to create any functionality that allows the user to create ad
 
 To create some test data, please populate the database with five pages with the following titles. Each page should have a slug that is generated with the same protocol that will be used in the implementation. It should be possible to quickly populate the database with these pages - so consider creating a fixture.
 
-- "It is impossible to walk rapidly and be unhappy."
-- "We don't get offered crises, they arrive."
-- "I have seen the future and it doesn't work."
-- "I dwell in possibility..."
-- "Knowledge is power."
+* "It is impossible to walk rapidly and be unhappy."
+* "We don't get offered crises, they arrive."
+* "I have seen the future and it doesn't work."
+* "I dwell in possibility..."
+* "Knowledge is power."
 
 The backend software can be created in whatever language and framework you think is best suited.
 
 Specifications for the editable are below as user stories:
 
-- In 'read mode', user sees page title as stored in database.
-- In 'read mode', user sees 'edit button'.
-- User can click yellow edit button to switch to 'edit mode'.
-- In 'edit mode', user sees 'discard button' and 'save button'.
-- User can see existing page title in input field upon switching to 'edit mode'.
-- User can modify title in 'edit mode'.
-- User cannot submit title with 0 characters.
-- User sees disabled (grayed out) save button if input contains 0 characters.
-- User is presented with a generated slug upon modifying the value of the title input (on keyup).
-- If a generated slug conflicts with one already in the database, 5 random characters should be appended to the slug.
-- User can click 'save button' to persist title and slug to database and be returned to 'read mode'.
-- User can click 'discard button' to discard any modifications.
-
+* In 'read mode', user sees page title as stored in database.
+* In 'read mode', user sees 'edit button'.
+* User can click yellow edit button to switch to 'edit mode'.
+* In 'edit mode', user sees 'discard button' and 'save button'.
+* User can see existing page title in input field upon switching to 'edit mode'.
+* User can modify title in 'edit mode'.
+* User cannot submit title with 0 characters.
+* User sees disabled (grayed out) save button if input contains 0 characters.
+* User is presented with a generated slug upon modifying the value of the title input (on keyup).
+* If a generated slug conflicts with one already in the database, 5 random characters should be appended to the slug.
+* User can click 'save button' to persist title and slug to database and be returned to 'read mode'.
+* User can click 'discard button' to discard any modifications.
 
 Please work from this directory, and share your implementation. Ideally, you can create a Git repository and invite us as a collaborator. Instructions should be added to this README file that allow us to take your code, run the application, and evaluate your work. Code should be annotated where sensible.
 
 As a whole, this exercise aims to touch on a variety of skills and concepts involved in a lot of development at Type/Code. Throughout the process, please feel free to reach out for help - while we're reluctant to give hints for implemenation, we're glad to clarify specifications. Please dedicate no more than 12 hours to the exercise - while 100% completion is great, it's not expected - focus on the areas where you know you can excel and identify areas where you might need some help.
+
+## Stacks and Environments
+
+### Stacks
+
+* NodeJS, Express, Sequelize, Sqlite,
+* Javascript, Scss, jQuery,
+
+### Requirements
+
+* npm 5.6.0
+* node 8.5.0
+
+## Development
+
+```
+cd exercise
+npm install
+node_modules/.bin/sequelize db:migrate
+node_modules/.bin/sequelize db:seed:all
+npm run develop
+```
+
+## Run
+
+```
+cd exercise
+npm install
+npm run start
+```
