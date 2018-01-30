@@ -45,25 +45,35 @@ body {
   font-style: normal;
 
   color: $main-text;
+  line-height: 22.8px;
+  font-size: 19px;
 }
 
 aside {
   font-family: 'FuturaStd';
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 11px;
+  line-height: 13.2px;
+
+  letter-spacing: 0.104em;
+  color: $aside-gray;
 
   strong {
-    font-weight: 600;
+    font-family: 'Copernicus';
+    font-weight: 900;
+    text-transform: none;
+    font-size: 14px;
+    color: $aside-link;
   }
-
-  color: $main-gray;
 }
 
-address {
+.address {
   font-style: normal;
   font-family: 'FuturaStd';
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 13.3px;
+  line-height: 16px;
+  letter-spacing: 0.104em;
 
   color: $main-gray;
   display: inline-block;
@@ -75,9 +85,17 @@ h1 {
 }
 
 h2 {
-  margin-left: -30px;
+  margin-left: -46px;
   font-family: 'Copernicus';
   font-weight: 900;
 
+  font-size: 32px;
+  line-height: 38.4px;
+
   color: $secondary;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 22px;
 }

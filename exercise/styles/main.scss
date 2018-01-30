@@ -3,26 +3,64 @@
 @import 'common';
 @import 'grid';
 
-$darken: 0%;
-
-$color: rgb(255, 255, 255);
-$color-alpha: darken($color, $darken);
-
-// Apply color here!
-// Todo el color que quieras!
-$color-base: rgb(0, 0, 0);
-
 header {
-  h1 {
-    opacity: 0.3;
+  .container-fluid.text-right {
+    justify-content: flex-end;
   }
-  height: 100vh;
+
+  nav {
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    .hamburger-menu {
+      margin-left: 10px;
+      width: 33px;
+      height: 20px;
+      display: inline-block;
+      vertical-align: middle;
+
+      input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+      }
+
+      span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #9f9b86;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+
+        &:last-child {
+          transform-origin: 0% 100%;
+        }
+      }
+    }
+  }
+
+  h1 {
+    opacity: 0;
+  }
+
+  height: 800px;
   background-image: url('/assets/Ji9qebSpSlSbnsWRZnDX__MG_9520.jpg');
   background-size: cover;
   background-position: center center;
   position: relative;
-
   margin-bottom: 60px;
+  padding-top: 80px;
 
   .title-wrapper {
     position: absolute;
@@ -32,8 +70,8 @@ header {
     padding: 0 30px;
 
     h1 {
-      line-height: 92px;
-      font-size: 62px;
+      line-height: 72px;
+      font-size: 70px;
       font-family: 'Copernicus';
       font-weight: 900;
       display: inline;
@@ -41,17 +79,26 @@ header {
     }
 
     svg {
+      $darken: 0%;
+      $color: rgb(255, 255, 255);
+      $color-alpha: darken($color, $darken);
+      $color-base: rgb(0, 0, 0);
+
       width: 100%;
       height: 92px;
 
+      border-left: 22px solid white;
+      border-right: 22px solid white;
+
+      margin-left: -22px;
+
       .alpha {
         fill: $color-alpha;
-        //animation: alpha 10s ease infinite;
       }
 
       .title {
-        line-height: 92px;
-        font-size: 62px;
+        line-height: 72px;
+        font-size: 70px;
 
         font-family: 'Copernicus';
         font-weight: 900;
@@ -65,17 +112,17 @@ header {
     bottom: 0;
     width: 70px;
     left: 0;
-    background: blue;
-    height: 30px;
+    background: white;
+    height: 40px;
   }
 
   .hider2 {
     position: absolute;
-    right: 0;
-    left: 50%;
-    background: blue;
-    height: 30px;
     bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    height: 40px;
   }
 }
 
@@ -88,8 +135,9 @@ aside {
     list-style-type: none;
 
     li {
-      border-top: 1px solid $main-gray;
-      margin-bottom: 30px;
+      border-top: 1px solid $aside-gray;
+      padding-top: 8.35px;
+      padding-bottom: 33px;
     }
   }
 }
