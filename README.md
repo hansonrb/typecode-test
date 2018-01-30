@@ -79,3 +79,5 @@ node_modules/.bin/sequelize db:seed:all
 npm run build-css
 npm run start
 ```
+
+And visit http://localhost:3000

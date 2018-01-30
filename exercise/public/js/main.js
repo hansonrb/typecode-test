@@ -26,6 +26,8 @@ $(document).ready(function() {
   });
 
   $('.action-btns .btn-save').click(function(e) {
+    if ($(this).hasClass('disabled')) return;
+
     window.title = $('.title-input')
       .val()
       .trim();
